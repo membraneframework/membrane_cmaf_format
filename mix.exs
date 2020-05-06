@@ -1,18 +1,18 @@
-defmodule Membrane.Caps.HTTPAdaptiveStream.MixProject do
+defmodule Membrane.CMAF.MixProject do
   use Mix.Project
 
   @version "0.1.0"
-  @github_url "https://github.com/membraneframework/membrane-caps-http-adaptive-stream"
+  @github_url "https://github.com/membraneframework/membrane_cmaf_format"
 
   def project do
     [
-      app: :membrane_caps_http_adaptive_stream,
+      app: :membrane_cmaf_format,
       version: @version,
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
-      description: "Membrane Multimedia Framework (HTTP Adaptive Stream Caps)",
+      description: "Membrane CMAF format",
       package: package(),
-      name: "Membrane Caps: HTTP Adaptive Stream",
+      name: "Membrane CMAF format",
       source_url: @github_url,
       docs: docs(),
       deps: deps()
@@ -32,8 +32,7 @@ defmodule Membrane.Caps.HTTPAdaptiveStream.MixProject do
     [
       main: "readme",
       extras: ["README.md"],
-      source_ref: "v#{@version}",
-      nest_modules_by_prefix: [Membrane.Caps.HTTPAdaptiveStream]
+      source_ref: "v#{@version}"
     ]
   end
 
