@@ -1,11 +1,11 @@
-defmodule Membrane.CMAF do
+defmodule Membrane.CMAF.Track do
   @moduledoc """
   Membrane description for Common Media Application Format.
   """
 
   @enforce_keys [
     :content_type,
-    :init
+    :header
   ]
   defstruct @enforce_keys
 
@@ -16,6 +16,6 @@ defmodule Membrane.CMAF do
   """
   @type t :: %__MODULE__{
           content_type: :audio | :video,
-          init: binary
+          header: binary
         }
 end
