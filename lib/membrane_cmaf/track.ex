@@ -12,7 +12,7 @@ defmodule Membrane.CMAF.Track do
   @typedoc """
   Common Media Application Format description.
 
-  The init field should contain binary contents of a CMAF init file.
+  The header field should contain binary contents of a CMAF init file.
   """
   @type t :: %__MODULE__{
           content_type: :audio | :video,
