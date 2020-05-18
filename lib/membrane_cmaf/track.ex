@@ -1,6 +1,6 @@
 defmodule Membrane.CMAF.Track do
   @moduledoc """
-  Membrane description for Common Media Application Format.
+  Membrane description for a single track in Common Media Application Format.
   """
 
   @enforce_keys [
