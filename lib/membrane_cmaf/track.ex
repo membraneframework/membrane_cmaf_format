@@ -10,7 +10,7 @@ defmodule Membrane.CMAF.Track do
   defstruct @enforce_keys
 
   @typedoc """
-  Common Media Application Format description.
+  Struct describing a single track in Common Media Application Format.
 
   The header field should contain binary contents of a CMAF init file.
   """
