@@ -1,7 +1,7 @@
 defmodule Membrane.CMAF.MixProject do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
   @github_url "https://github.com/membraneframework/membrane_cmaf_format"
 
   def project do
@@ -49,9 +49,9 @@ defmodule Membrane.CMAF.MixProject do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.6.0"},
-      {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev, :test], runtime: false}
+      {:membrane_core, "~> 0.7.0"},
+      {:ex_doc, "~> 0.24.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false}
     ]
   end
 end
