@@ -15,7 +15,7 @@ defmodule Membrane.CMAF.Track do
   The header field should contain binary contents of a CMAF init file.
   """
   @type t :: %__MODULE__{
-          content_type: :audio | :video,
+          content_type: :audio | :video | :muxed_audio_video,
           header: binary
         }
 end
