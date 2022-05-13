@@ -74,5 +74,4 @@ defmodule Membrane.CMAF.MixProject do
       source_ref: "v#{@version}"
     ]
   end
-
 end
