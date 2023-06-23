@@ -7,7 +7,11 @@ defmodule Membrane.CMAF.Track do
     :content_type,
     :header
   ]
-  defstruct @enforce_keys
+  defstruct @enforce_keys ++
+              [
+                resolution: nil,
+                codecs: %{}
+              ]
 
   @type content_type_t() :: :audio | :video
 
@@ -18,6 +22,11 @@ defmodule Membrane.CMAF.Track do
   """
   @type t :: %__MODULE__{
           content_type: content_type_t() | [content_type_t()],
-          header: binary
+          header: binary,
+          resolution: {non_neg_integer(), non_neg_integer()} | nil,
+          codecs: %{
+            optional(:avc1) => %{aot_id: binary(), channels: integer(), frequency: integer()},
+            optional(:mp4a) => %{profile: binary(), compatibiliy: binary(), level: binary()}
+          }
         }
 end
