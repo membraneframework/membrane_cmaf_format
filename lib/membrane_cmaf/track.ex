@@ -25,8 +25,9 @@ defmodule Membrane.CMAF.Track do
           header: binary,
           resolution: {non_neg_integer(), non_neg_integer()} | nil,
           codecs: %{
-            optional(:avc1) => %{aot_id: binary(), channels: integer(), frequency: integer()},
-            optional(:mp4a) => %{profile: binary(), compatibiliy: binary(), level: binary()}
+            optional(:mp4a) => %{aot_id: binary(), channels: integer(), frequency: integer()},
+            optional(:avc1) => %{profile: binary(), compatibility: binary(), level: binary()},
+            optional(:hvc1) => %{profile: non_neg_integer(), tier: non_neg_integer(), level: non_neg_integer()}
           }
         }
 end
