@@ -11,7 +11,7 @@ Membrane description for Common Media Application Format.
 Add the following line to your `deps` in `mix.exs`. Run `mix deps.get`.
 
 ```elixir
-{:membrane_cmaf_format, "~> 0.7.0"}
+{:membrane_cmaf_format, "~> 0.7.1"}
 ```
 
 ## Copyright and License
