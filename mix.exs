@@ -38,7 +38,7 @@ defmodule Membrane.CMAF.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.24.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev, :test], runtime: false},
       {:credo, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
