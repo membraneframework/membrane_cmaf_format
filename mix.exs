@@ -1,7 +1,7 @@
 defmodule Membrane.CMAF.MixProject do
   use Mix.Project
 
-  @version "0.7.1"
+  @version "0.7.2"
   @github_url "https://github.com/membraneframework/membrane_cmaf_format"
 
   def project do
@@ -22,7 +22,8 @@ defmodule Membrane.CMAF.MixProject do
       name: "Membrane CMAF format",
       source_url: @github_url,
       homepage_url: "https://membraneframework.org",
-      docs: docs()
+      docs: docs(),
+      aliases: [docs: ["docs", &append_llms_links/1]]
     ]
   end
 
@@ -37,7 +38,7 @@ defmodule Membrane.CMAF.MixProject do
 
   defp deps do
     [
-      {:ex_doc, ">= 0.0.0", only: [:dev, :test], runtime: false},
+      {:ex_doc, ">= 0.40.0", only: [:dev, :test], runtime: false},
       {:dialyxir, ">= 0.0.0", only: [:dev, :test], runtime: false},
       {:credo, ">= 0.0.0", only: :dev, runtime: false}
     ]
@@ -74,5 +75,27 @@ defmodule Membrane.CMAF.MixProject do
       extras: ["README.md", "LICENSE"],
       source_ref: "v#{@version}"
     ]
+  end
+
+  defp append_llms_links(_args) do
+    output_dir = docs()[:output] || "doc"
+    path = Path.join(output_dir, "llms.txt")
+
+    if File.exists?(path) do
+      existing = File.read!(path)
+
+      footer = """
+
+
+      ## See Also
+
+      - [Membrane Framework AI Skill](https://hexdocs.pm/membrane_core/skill.md)
+      - [Membrane Core](https://hexdocs.pm/membrane_core/llms.txt)
+      """
+
+      File.write!(path, String.trim_trailing(existing) <> footer)
+    else
+      IO.warn("#{path} not found — llms.txt was not generated, check your ex_doc configuration")
+    end
   end
 end
